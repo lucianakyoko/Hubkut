@@ -8,4 +8,13 @@ export const flexColCenterGap = (gap) => {
     align-items: center;
     gap: ${gap}rem;
   `
-}
+};
+
+export const flexRowCenterGap = (gap) => {
+  return `
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: ${gap}rem;
+  `
+};
