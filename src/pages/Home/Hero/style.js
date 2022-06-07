@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import { colors } from "../../../styles/colors";
+import { flexColCenterGap } from '../../../styles/mixins';
 
 export const HeroWrapper = styled.div`
   padding: 5.8rem 1rem 3.6rem 1rem;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+  ${flexColCenterGap(3)}
 
   background-color: ${colors.secondary100};
   border-radius: .8rem;
@@ -22,10 +20,8 @@ export const HeroWrapper = styled.div`
   }
 `;
 
-export const HeroParagraphsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+export const HeroParagraphsWrapper = styled.div` 
+  ${flexColCenterGap(1.5)}
 
   p {
     color: ${colors.secondary800};
@@ -41,7 +37,7 @@ export const HeroParagraphsWrapper = styled.div`
   }
   
   @media screen and (min-width: 1000px) {
-    gap: .5rem;
+    gap: 1rem;
 
     p {
       font-size: 1.4rem;
