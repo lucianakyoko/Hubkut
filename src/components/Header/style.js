@@ -34,7 +34,7 @@ export const HeaderLogoWrapper = styled.div`
    }
 `;
 
-export const OpenMenuBtn = styled.img`
+export const OpenCloseMenuBtn = styled.img`
   width: 3.2rem;
   height: 2.1rem;
 

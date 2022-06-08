@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import logo from '../../assets/images/logo.svg';
 import burgerMenu from '../../assets/images/menu.svg';
+import closeMenu from '../../assets/images/close.svg';
 import { Navbar } from './Navbar';
 import { UserProfile } from '../UserProfile';
 
 import {
   HeaderWrapper,
   HeaderLogoWrapper,
-  OpenMenuBtn,
+  OpenCloseMenuBtn,
   OpenProfile
 } from './style';
 
@@ -23,11 +24,19 @@ export function Header() {
         </HeaderLogoWrapper>
 
         <Navbar />
-        <OpenMenuBtn 
-          src={burgerMenu} 
-          alt="Abrir menu"
-          onClick={handleClick}
-        />
+        {active ?
+          <OpenCloseMenuBtn 
+            src={burgerMenu} 
+            alt="Abrir menu"
+            onClick={handleClick}
+          />
+          :
+          <OpenCloseMenuBtn 
+            src={closeMenu} 
+            alt="Fechar menu"
+            onClick={handleClick}
+          />
+        }
       </HeaderWrapper>
 
       { active && 
