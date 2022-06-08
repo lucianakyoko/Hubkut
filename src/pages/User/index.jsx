@@ -8,7 +8,9 @@ import {
   UserPageContainer,
   UserProfileSectionContainer,
   ContentContainer,
+  FollowContainer
 } from './style';
+import { FollowSection } from "./FolowSection";
 
 export function User() {
   return (
@@ -25,6 +27,11 @@ export function User() {
           <WantToDoSection />
           <LatestReposSection />
         </ContentContainer>
+
+        <FollowContainer>
+          <FollowSection sectionTitle="Seguidores" number={'20'}/>
+          <FollowSection sectionTitle="Seguindo" number={'200'}/>
+        </FollowContainer>
       </main>
     </UserPageContainer>
   )

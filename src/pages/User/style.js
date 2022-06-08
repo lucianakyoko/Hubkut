@@ -38,4 +38,14 @@ export const ContentContainer = styled.div`
     width: 61.8rem;
     gap: 3rem;
   }
+`;
+
+export const FollowContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media screen and (min-width: 1000px) {
+    gap: 6rem;
+  }
 `
