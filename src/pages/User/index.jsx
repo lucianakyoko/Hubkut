@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { context } from "../../context";
+
 import { Header } from "../../components/Header";
 import { UserProfile } from "../../components/UserProfile";
 import { WelcomeSection } from './WelcomeSection';
@@ -13,6 +16,8 @@ import {
 import { FollowSection } from "./FolowSection";
 
 export function User() {
+  const ctx = useContext(context);
+
   return (
     <UserPageContainer>
       <Header />
@@ -23,7 +28,7 @@ export function User() {
         </UserProfileSectionContainer>
 
         <ContentContainer>
-          <WelcomeSection />
+          <WelcomeSection userName={ctx.userData.name}/>
           <WantToDoSection />
           <LatestReposSection />
         </ContentContainer>
