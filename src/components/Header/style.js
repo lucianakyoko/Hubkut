@@ -45,4 +45,26 @@ export const OpenMenuBtn = styled.img`
   @media screen and (min-width: 1000px) {
     display: none;
   }
+`;
+
+export const OpenProfile = styled.div`
+  width: 100%;
+  height: 90rem;
+
+  position: absolute;
+  top: 4.8rem;
+  left: 0;
+  z-index: 1;
+
+  animation: openSidebar .4s;
+
+  @keyframes openSidebar {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `
