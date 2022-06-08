@@ -1,10 +1,12 @@
 import { Header } from "../../components/Header";
 import { UserProfile } from "../../components/UserProfile";
 import { WelcomeSection } from './WelcomeSection';
+import { WantToDoSection } from './WantTodoSection';
 
 import {
   UserPageContainer,
-  UserProfileSectionContainer
+  UserProfileSectionContainer,
+  ContentContainer,
 } from './style';
 
 export function User() {
@@ -17,9 +19,10 @@ export function User() {
           <UserProfile />
         </UserProfileSectionContainer>
 
-        <div>
+        <ContentContainer>
           <WelcomeSection />
-        </div>
+          <WantToDoSection />
+        </ContentContainer>
       </main>
     </UserPageContainer>
   )

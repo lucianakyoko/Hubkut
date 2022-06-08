@@ -6,10 +6,13 @@ export const UserPageContainer = styled.div`
   background-color: ${colors.primary100};
 
   main {
+    width: 100%;
     margin-top: 4.8rem;
     padding: 1.6rem 1.6rem 2rem 1.6rem;
-    ${flexColCenterGap(2)};
-    align-items: flex-start;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
     @media screen and (min-width: 1000px) {
       padding: 2.4rem 12.8rem 6.4rem 12.8rem;
@@ -26,3 +29,13 @@ export const UserProfileSectionContainer = styled.div`
   }
 `;
 
+export const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media screen and (min-width: 1000px) {
+    width: 61.8rem;
+    gap: 3rem;
+  }
+`
