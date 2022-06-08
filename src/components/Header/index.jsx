@@ -30,12 +30,11 @@ export function Header() {
         />
       </HeaderWrapper>
 
-      {
-        active && 
+      { active && 
         <OpenProfile>
           <UserProfile active={active}/>
         </OpenProfile>
-      }
+      } 
     </>
   )
 }

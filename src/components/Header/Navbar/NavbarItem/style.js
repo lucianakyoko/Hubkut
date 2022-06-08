@@ -3,7 +3,7 @@ import { colors } from "../../../../styles/colors";
 
 export const NavbarItemWrapper = styled.li` 
   a {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: ${colors.secondary100};
     line-height: 1.4rem;
