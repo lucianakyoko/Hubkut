@@ -2,6 +2,7 @@ import { Header } from "../../components/Header";
 import { UserProfile } from "../../components/UserProfile";
 import { WelcomeSection } from './WelcomeSection';
 import { WantToDoSection } from './WantTodoSection';
+import { LatestReposSection } from './LatestReposSection';
 
 import {
   UserPageContainer,
@@ -22,6 +23,7 @@ export function User() {
         <ContentContainer>
           <WelcomeSection />
           <WantToDoSection />
+          <LatestReposSection />
         </ContentContainer>
       </main>
     </UserPageContainer>
