@@ -8,7 +8,7 @@ import {
   StarWrapper
 } from './style';
 
-export function RepoItem({href, label}) {
+export function RepoItem({href, label, star}) {
   return(
     <RepoItemWrapper>
       <RepoItemDetailsWrapper>
@@ -19,7 +19,7 @@ export function RepoItem({href, label}) {
 
         <StarWrapper>
           <img src={iconStar} alt="Ícone estrela" />
-          <span>4</span>
+          <span>{star}</span>
         </StarWrapper>
       </RepoItemDetailsWrapper>
       <p>Descrição do projeto</p>
