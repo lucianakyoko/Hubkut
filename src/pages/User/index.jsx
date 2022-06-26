@@ -6,6 +6,8 @@ import { UserProfile } from "../../components/UserProfile";
 import { WelcomeSection } from './WelcomeSection';
 import { WantToDoSection } from './WantTodoSection';
 import { LatestReposSection } from './LatestReposSection';
+import { FollowersSection } from "./FollowersSection";
+import { FollowingSection } from './FollowingSection';
 
 import {
   UserPageContainer,
@@ -13,7 +15,6 @@ import {
   ContentContainer,
   FollowContainer
 } from './style';
-import { FollowSection } from "./FolowSection";
 
 export function User() {
   const ctx = useContext(context);
@@ -34,8 +35,8 @@ export function User() {
         </ContentContainer>
 
         <FollowContainer>
-          <FollowSection sectionTitle="Seguidores" number={'20'}/>
-          <FollowSection sectionTitle="Seguindo" number={'200'}/>
+          {ctx.followersList && <FollowersSection />}
+          {ctx.followingList && <FollowingSection />}
         </FollowContainer>
       </main>
     </UserPageContainer>
