@@ -20,7 +20,6 @@ export function FollowersSection() {
       client.get(`/${user}/followers?per_page=100`)
       .then(res => {
         ctx.setFollowersList(res.data)
-        console.log(res.data)
       })
       .catch(err => console.log(err))
     };
@@ -29,7 +28,6 @@ export function FollowersSection() {
       getUserFollowers(); 
     }, []);
 
-    console.log(followers)
   return(
     <FollowSectionWrapper>
       <h3>Seguidores<span>({ctx.userData.followers})</span></h3>

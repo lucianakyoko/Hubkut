@@ -67,7 +67,7 @@ export function UserProfile({active}) {
         <h2>Organizações</h2>
         <ul>
           {orgs.length > 0 && orgs.map(item => (
-            <UserOrganization icon={item.avatar_url} name={item.login} href={item.url}/>
+            <UserOrganization key={item.id} icon={item.avatar_url} name={item.login} href={item.url}/>
           ))}
 
         </ul>

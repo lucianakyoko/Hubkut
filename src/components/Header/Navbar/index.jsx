@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 export function Navbar() {
   const ctx = useContext(context);
   const GithubLink = ctx.userData.html_url;
-  const logout = useNavigate();
 
   return(
     <NavbarWrapper>
