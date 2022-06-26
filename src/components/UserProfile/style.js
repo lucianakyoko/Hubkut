@@ -11,6 +11,7 @@ export const UserProfileSection = styled.section`
   }
 
   @media screen and (min-width: 1000px) {
+    width: 18.8rem;
     padding: 1.8rem .9rem;
     border-radius: .8rem;
   }

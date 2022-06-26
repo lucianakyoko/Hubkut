@@ -1,3 +1,7 @@
+import { useContext, useState, useEffect } from 'react';
+import { context } from '../../context';
+import client from '../../services/client';
+
 import { UserLink } from './UserLink';
 import { UserOrganization } from './UserOrganization';
 
@@ -14,33 +18,58 @@ import {
   UserProfileOrganizationWrapper
 } from './style';
 
+
 export function UserProfile({active}) {
+  const [orgs, setOrgs] = useState([]);
+  const ctx = useContext(context);
+  const data = ctx.userData;
+
+  const userName = data.name;
+  const userLogin = data.login;
+  const avatar = data.avatar_url;
+  const company = data.company;
+  const location = data.location;
+  const email = data.email;
+  const blog = data.blog;
+  const twitter = data.twitter_username;
+
+  const getUserOrgs = () => {
+    client.get(`${userLogin}/orgs`)
+      .then(res => setOrgs(res.data))
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    getUserOrgs();
+  }, [])
+
   return(
     <UserProfileSection className={active ? 'active' : ''}>
       <UserProfileHeader>
-        <img src="" alt="" />
+        <img src={avatar} alt="Foto do perfil" />
         <div>
-          <h2>Fulana de Tal</h2>
-          <h3>@fulanadetal</h3>
+          <h2>{userName}</h2>
+          <h3>@{userLogin}</h3>
         </div>
       </UserProfileHeader>
 
       <UserProfileLinksWrapper>
         <ul>
-          <UserLink icon={iconBuilding} label='link 1' href='#'/>
-          <UserLink icon={iconPin} label='link 1' href='#'/>
-          <UserLink icon={iconEmail} label='link 1' href='#'/>
-          <UserLink icon={iconUrl} label='link 1' href='#'/>
-          <UserLink icon={iconTwitter} label='link 1' href='#'/>
+          {company !== null && <UserLink icon={iconBuilding} label={`@${company}`} href={`https://github.com/${company}`}/>}
+          {location !== null && <UserLink icon={iconPin} label={location} href=''/>}
+          {email !== null && <UserLink icon={iconEmail} label={email} href={`mailto:${email}`}/>}
+          {blog !== null && <UserLink icon={iconUrl} label={blog} href={blog}/>}
+          {twitter !== null && <UserLink icon={iconTwitter} label={`@${twitter}`} href={`https://twitter.com/${twitter}`}/>}
         </ul>
       </UserProfileLinksWrapper>
 
       <UserProfileOrganizationWrapper>
         <h2>Organizações</h2>
         <ul>
-          <UserOrganization />
-          <UserOrganization />
-          <UserOrganization />
+          {orgs.length > 0 && orgs.map(item => (
+            <UserOrganization icon={item.avatar_url} name={item.login} href={item.url}/>
+          ))}
+
         </ul>
       </UserProfileOrganizationWrapper>
     </UserProfileSection>
