@@ -16,6 +16,10 @@ export const UserOrganizationWrapper = styled.li`
     color: ${colors.primary500};
     font-size: 1.4rem;
     line-height: 2.4rem;
+
+    display: flex;
+    align-items: center;
+    gap: .8rem;
   }
 
   @media screen and (min-width: 1000px) {

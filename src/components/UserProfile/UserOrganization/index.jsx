@@ -1,10 +1,12 @@
 import { UserOrganizationWrapper } from './style';
 
-export function UserOrganization() {
+export function UserOrganization({icon, href, name}) {
   return(
     <UserOrganizationWrapper>
-      <img src="" alt="" />
-      <a href="">Organização</a>
+      <a href={href}>
+        <img src={icon} alt="Ícone da organização" />
+        {name}
+      </a>
     </UserOrganizationWrapper>
   )
 }
