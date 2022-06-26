@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { context } from '../../../context';
 import client from '../../../services/client';
 
@@ -14,7 +14,6 @@ import {
   SummaryListWrapper
 } from './style';
 
-
 export function WelcomeSection({userName}) {
   const ctx = useContext(context);
   const [favorite, setFavorite] = useState('');
@@ -22,16 +21,19 @@ export function WelcomeSection({userName}) {
   const repos = ctx.userData.public_repos;
   const followers = ctx.userData.followers;
   const following = ctx.userData.following;
+
+  useEffect(() => {
+    const getFavoriteRepos = user => {
+      client.get(`/${user}/starred`)
+        .then(res => {
+          setFavorite(res.data.length);
+        })
+        .catch(err => console.log(err))
+    }
+    
+    getFavoriteRepos(`${ctx.userData.login}`);
+  },[])
  
-  const getFavoriteRepos = user => {
-    client.get(`/${user}/starred`)
-      .then(res => {
-        setFavorite(res.data.length);
-      })
-      .catch(err => console.log(err))
-  }
-  
-  getFavoriteRepos(`${ctx.userData.login}`);
 
   return(
     <WelcomeSectionWrapper>
