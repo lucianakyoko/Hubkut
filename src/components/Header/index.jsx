@@ -24,7 +24,7 @@ export function Header() {
         </HeaderLogoWrapper>
 
         <Navbar />
-        {active ?
+        {!active ?
           <OpenCloseMenuBtn 
             src={burgerMenu} 
             alt="Abrir menu"
