@@ -22,7 +22,7 @@ export const NavbarList = styled.ul`
 export const SearchWrapper = styled.div`
   ${flexRowCenterGap(2.4)};
 
-  span {
+  a {
     color: ${colors.secondary100};
     font-size: 1.4rem;
     line-height: 1.4rem;
