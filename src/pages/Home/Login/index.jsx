@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import client from '../../../services/client';
 import { context } from '../../../context';
@@ -17,12 +17,10 @@ export function Login() {
 
   const getUserData = event => {
     event.preventDefault();
-
     client.get(`/${loginValue}`)
       .then(response => {
         ctx.setUserData(response.data);
         nav('user');
-        console.log(response.data)
       })
       .catch(err => console.log(err))
   }
