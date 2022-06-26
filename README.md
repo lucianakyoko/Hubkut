@@ -1,17 +1,19 @@
-# Hubkut
-Hubkut é a união entre o Orkut e Github.
 <p align="center">
   <img alt="Screenshot da página" src="./src/assets/images/logo.svg" width="70%"/>
 </p>
 
 <p align="center">
-  <a href="#trilha-origin">Link &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#tecnologias">Tecnologias &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#sobre">Sobre &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#layout">Layout 
+  Hubkut é a união entre o Orkut e Github.
 </p>
 
-## :construction_worker: Projeto em desenvolvimento...
+<p align="center">
+  <a href="#trilha-origin">Link</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#tecnologias">Tecnologias</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#sobre">Sobre</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#layout">Layout</a> 
+</p>
+
+---
 
 ## Tecnologias:
  - React
